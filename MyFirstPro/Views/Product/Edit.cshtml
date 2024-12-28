@@ -1,0 +1,20 @@
+﻿@model MyFirstPro.Models.Product
+
+<h2>Edit Product</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div>
+        <label>Quantity</label>
+        @Html.TextBoxFor(m => m.Quantity)
+        @Html.ValidationMessageFor(m => m.Quantity)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}

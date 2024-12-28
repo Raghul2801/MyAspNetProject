@@ -1,0 +1,30 @@
+﻿@model List<MyFirstPro.Models.Product>
+
+<h2>Product Inventory</h2>
+<p>
+    @Html.ActionLink("Add New Product", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Quantity</td>
+                <td>@product.Status</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
+                    @Html.ActionLink("Delete", "Delete", "Product", new { id = product.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
